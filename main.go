@@ -13,5 +13,7 @@ func main() {
 	db, _ := sql.Open("sqlite3", "db.sqlite")
 	productDbAdapter := db2.NewProductDb(db)
 	productService := application.NewProductService(productDbAdapter)
-	productService.Create("Product 1", 10)
+	product, _ := productService.Create("Product 1", 10)
+
+	productService.Enable(product)
 }
