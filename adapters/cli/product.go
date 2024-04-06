@@ -40,7 +40,7 @@ func Run(service application.ProductServiceInterface, action string, productId s
 		if err != nil {
 			return result, err
 		}
-		result = fmt.Sprintf("Product ID:  %s\nName: %s\n Price: %s\n Status: %s\n", product.GetID(), product.GetName(), product.GetPrice(), product.GetStatus())
+		result = fmt.Sprintf("Product ID:  %s\nName: %s\n Price: %f\n Status: %s\n", product.GetID(), product.GetName(), product.GetPrice(), product.GetStatus())
 	}
 
 	return result, nil
