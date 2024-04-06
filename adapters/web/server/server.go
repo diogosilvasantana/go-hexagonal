@@ -15,8 +15,8 @@ type WebServer struct {
 	Service application.ProductServiceInterface
 }
 
-func MakeNewWebServer(service application.ProductServiceInterface) WebServer {
-	return WebServer{Service: service}
+func MakeNewWebServer() WebServer {
+	return WebServer{}
 }
 
 func (w WebServer) Serve() {
@@ -32,7 +32,7 @@ func (w WebServer) Serve() {
 	server := &http.Server{
 		ReadHeaderTimeout: 10 * time.Second,
 		WriteTimeout:      10 * time.Second,
-		Addr:              ":8080",
+		Addr:              ":9000",
 		Handler:           nil,
 		ErrorLog:          log.New(os.Stderr, "log: ", log.Lshortfile),
 	}
